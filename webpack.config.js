@@ -1,12 +1,13 @@
 var webpack = require('webpack');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
-	entry: [
-		'webpack/hot/only-dev-server',
-		"./src/app.js"
-	],
+	entry: {
+		webpack: ['webpack-dev-server/client?http://localhost:8080','webpack/hot/only-dev-server'],
+		app: "./src/app.js"
+	},
 	output: {
 		path: './build',
-		filename: "bundle.js"
+		filename: "[name].js"
 	},
 	module: {
 		loaders: [{
@@ -21,12 +22,17 @@ module.exports = {
 			test: /\.css$/,
 			loader: "style!css"
 
+		}, {
+			test: /\.scss$/,
+			loader: ExtractTextPlugin.extract('style', 'css!sass')
+
 		}]
 	},
 	resolve: {
 		extensions: ['', '.js', '.json']
 	},
 	plugins: [
+		new ExtractTextPlugin("[name].css"),
 		new webpack.HotModuleReplacementPlugin(), //热替换插件
 		new webpack.NoErrorsPlugin()	//防止报错插件
 	]
