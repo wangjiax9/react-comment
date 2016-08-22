@@ -32,12 +32,8 @@ module.exports = {
 		extensions: ['', '.js', '.json']
 	},
 	plugins: [
-		new sassLintPlugin({
-			context: ['./css'],
-			ignorePlugins: ['extract-text-webpack-plugin'],
-			ignoreFiles: ['./example/_test.scss']
-		}),
-		new ExtractTextPlugin('styles.css'),
+
+		new ExtractTextPlugin('./css/styles.css'),
 		new webpack.HotModuleReplacementPlugin(), //热替换插件
 		new webpack.NoErrorsPlugin()	//防止报错插件
 	]

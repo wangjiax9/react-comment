@@ -1,24 +1,15 @@
 import React from 'react';
-import Router from 'react-router';
-import { DefaultRoute, Link, Route, RouteHandler } from 'react-router';
-import HelloHandler from './hello.js';
-let App = React.createClass({
-  render() {
+import CommentList from './CommentList';
+let CommentBox = React.createClass({
+  render(){
     return (
-      <div className="nav">
-        <Link to="app" className="homelink">webpack  </Link>
-        <Link to="hello" className="hellolink">  Say Hello react !</Link>
-        {/* this is the importTant part */}
-        <RouteHandler/>
-      </div>
-    );
+        <div>
+            <h1>CommentBox</h1>
+            <CommentList/>
+        </div>
+    )
   }
 });
-let routes = (
-  <Route name="app" path="/" handler={App}>
-    <Route name="hello" path="/hello" handler={HelloHandler}/>
-  </Route>
-);
-Router.run(routes, function (Handler) {
-  React.render(<Handler />, document.body);
-});
+
+React.render(<CommentBox/>,document.querySelector("body"));
+
