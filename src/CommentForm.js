@@ -1,11 +1,18 @@
-import React from 'react';
-class CommentForm extends React.Component{
+import React,{Component} from 'react';
+class CommentForm extends Component{
+    constructor(props){
+        super(props);
+        this.addComment = this.addComment.bind(this);
+    }
     addComment(){
+        console.log("Enter addComment of CommentForm!");
+        console.log(this.props);
         let text = this.refs.text.value;
         if(!text){
             return;
         }
         //send requeset
+        this.props.onCommentAdd(text);
         this.refs.text.value = "";
         return;
     }
@@ -13,7 +20,7 @@ class CommentForm extends React.Component{
         return(
             <div>
                 <input type="text" placeholder="say something" ref="text"/>
-                <input type="button" value="发表" onclick={this.addComment}/>
+                <input type="button" value="发表" onClick={this.addComment}/>
             </div>
         )
     }
