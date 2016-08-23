@@ -1,16 +1,30 @@
 import React from 'react';
 import CommentList from './CommentList';
+import CommentForm from './CommentForm';
 let CommentBox = React.createClass({
-  render(){
-  	let list = ["sdfs","qpaoa","mxmxm"];
-    return (
-        <div>
-            <h1>CommentBox</h1>
-            <CommentList content={list}/>
-        </div>
-    )
-  }
+    //loadCommentForm(){
+    //
+    //},
+    //handleAddComment(){
+    //
+    //},
+    //getInitialState(){
+    //  return {data:[]};
+    //},
+    render(){
+        var data = [
+          {author: "Pete Hunt", text: "This is one comment"},
+          {author: "Jordan Walke", text: "This is *another* comment"}
+        ];
+        return (
+            <div>
+                <h1>CommentBox</h1>
+                <CommentList data={data}/>
+                <CommentForm onCommentAdd={this.handleAddComment}/>
+            </div>
+        )
+    }
 });
 
-React.render(<CommentBox/>,document.querySelector("body"));
+React.render(<CommentBox/>,document.body);
 
