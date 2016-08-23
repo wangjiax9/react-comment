@@ -13,7 +13,7 @@ class CommentForm extends React.Component{
         return(
             <div>
                 <input type="text" placeholder="say something" ref="text"/>
-                <input type="button" value="·¢±í" onclick={this.addComment}/>
+                <input type="button" value="å‘è¡¨" onclick={this.addComment}/>
             </div>
         )
     }
