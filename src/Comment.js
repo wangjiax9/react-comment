@@ -1,9 +1,6 @@
 import React from 'react';
-Class Comment extends React.Component{
-	render(){
-		return (
-			<li>{this.pros.content}</li>
-		)
-	}
+class Comment extends React.Component{
+	render(){return (<li>{this.props.data.text}</li>)}
+
 }
 export default Comment;

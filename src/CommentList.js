@@ -1,9 +1,13 @@
 import React from 'react';
+import Comment from './Comment';
 class CommentList extends React.Component{
-    render(){       
+    render(){
+        let nodes = this.props.data.map(node=>(
+            <Comment data={node}/>
+        ));
         return (
         	<ul>
-        		<Coment content={this.pros.content}/>
+                {nodes}
         	</ul>
         );
     }
