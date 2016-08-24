@@ -1,13 +1,15 @@
 import React from 'react';
 import CommentList from './CommentList';
 import CommentForm from './CommentForm';
-let CommentBox = React.createClass({
+const CommentBox = React.createClass({
     loadCommentForm(){
     
     },
     handleAddComment(text){
     	console.log("Eenter handleAddComment of CommentBox");
-    	this.state.data.push({author:"wjl",text:text});
+        this.state.data.push({author:"wjl",text:text});
+        console.log(this.state.data);
+        this.setState(this.state.data);
     },
     getInitialState(){
     	var data = [
@@ -22,7 +24,7 @@ let CommentBox = React.createClass({
             <div>
                 <h1>CommentBox</h1>
                 <CommentList data={this.state.data}/>
-                <CommentForm onCommentAdd={this.handleAddComment}/>
+                <CommentForm onAdd={this.handleAddComment}/>
             </div>
         )
     }
