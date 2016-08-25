@@ -8,7 +8,6 @@ const CommentBox = React.createClass({
     handleAddComment(text){
     	console.log("Eenter handleAddComment of CommentBox");
         this.state.data.push({author:"wjl",text:text});
-        console.log(this.state.data);
         this.setState(this.state.data);
     },
     getInitialState(){

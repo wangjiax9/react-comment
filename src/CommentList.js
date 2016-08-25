@@ -3,7 +3,7 @@ import Comment from './Comment';
 class CommentList extends React.Component{
     render(){
         let nodes = this.props.data.map((node,i)=>(
-            <Comment data={node}/>
+            <Comment key={i} data={node}/>
         ));
         return (
         	<ul>
