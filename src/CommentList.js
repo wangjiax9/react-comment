@@ -1,5 +1,4 @@
 import React from 'react';
-import Style from '../css/g.scss';
 import Comment from './Comment';
 class CommentList extends React.Component{
     render(){
@@ -7,7 +6,7 @@ class CommentList extends React.Component{
             <Comment key={i} data={node}/>
         ));
         return (
-        	<ul className={Style.nav}>
+        	<ul>
                 {nodes}
         	</ul>
         );

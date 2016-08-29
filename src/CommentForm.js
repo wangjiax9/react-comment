@@ -6,15 +6,14 @@ class CommentForm extends Component{
     }
     addComment(){
         console.log("Enter addComment of CommentForm!");
-        console.log(this.props);
-        let text = this.refs.text.getDOMNode().value;
+        console.log(this.refs);
+        let text = this.refs.text.value;
         if(!text){
             return;
         }
         //send requeset
         this.props.onAdd(text);
-        console.dir(this.refs.text.getDOMNode());
-        this.refs.text.getDOMNode().value = "";
+        this.refs.text.value = "";
         return;
     }
     render(){

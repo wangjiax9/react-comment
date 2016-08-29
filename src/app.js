@@ -1,9 +1,13 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
+import Fetch from 'node-fetch';
 import CommentList from './CommentList';
 import CommentForm from './CommentForm';
 let CommentBox = React.createClass({
-    loadCommentForm(){
-    
+    loadServerData(){
+        //Fetch("./data.json").then(function(res){
+        //    console.dir(res);
+        //});
     },
     handleAddComment(text){
     	console.log("Eenter handleAddComment of CommentBox");
@@ -11,6 +15,7 @@ let CommentBox = React.createClass({
         this.setState(this.state.data);
     },
     getInitialState(){
+        this.loadServerData();
     	var data = [
           {author: "Peteddd", text: "This is comment"},
           {author: "Jordan Walke", text: "This is *another* comment"}
@@ -29,5 +34,5 @@ let CommentBox = React.createClass({
     }
 });
 
-React.render(<CommentBox/>,document.body);
+ReactDOM.render(<CommentBox/>,document.querySelector("#react"));
 
