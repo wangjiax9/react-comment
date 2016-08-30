@@ -22,7 +22,7 @@
     "babel-preset-es2015": "^6.5.0",
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-3": "^6.11.0",
-    "style-loader":"^0.13.1",
+    "style-loader": "^0.13.1",
     "css-loader": "^0.12.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "node-sass": "^3.8.0",
@@ -34,6 +34,7 @@
     "webpack-dev-server": "^1.15.0"
   },
   "dependencies": {
+    "isomorphic-fetch": "^2.2.1",
     "lodash": "~3.10.1",
     "react-kendo": "~0.13.11"
   }
